@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Alex Thompson</title>
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/chatbot.css">
+
+<style>
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    padding: 20px;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.service-card h4 {
+    font-size: 1.8rem;
+    color: var(--dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.service-card p {
+    color: var(--text);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.service-features {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.service-features li {
+    padding: 0.5rem 0;
+    color: var(--text);
+}
+
+.service-features li::before {
+    content: "✓";
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.whatsapp-cta {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border-radius: 20px;
+    margin-top: 3rem;
+}
+
+.whatsapp-cta h3 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.btn-whatsapp {
+    padding: 1.2rem 3rem;
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: var(--transition);
+}
+
+.btn-whatsapp:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.4);
+}
+</style>
+
+<body>
+    
+
+<!-- HEADER - Appears on all pages -->
+    <header class="main-header">
+        <div class="header-container">
+            <!-- Logo -->
+            <div class="logo">
+                <h1><span class="logo-bracket"></span>IBRATECH<span class="logo-bracket"></span></h1>
+            </div>
+            
+            <!-- Tech Animation -->
+            <div class="tech-animation">
+                <div class="code-symbol rotating">IBRATECH</div>
+            </div>
+            
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="Search..." id="searchInput">
+                <button id="searchBtn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Hamburger Menu Icon -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="main-nav" id="mainNav">
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="skills.html">Skills</a></li>
+        </ul>
+    </nav>
+
+<!-- In your main content area: -->
+
+<main>
+<div class="services-grid">
+    <div class="service-card fade-in">
+        <div class="service-icon">🎨</div>
+        <h4>Website Design</h4>
+        <p>Create stunning, user-friendly designs that captivate your audience and reflect your brand identity.</p>
+        <ul class="service-features">
+            <li>Custom UI/UX Design</li>
+            <li>Mobile-First Approach</li>
+            <li>Brand Integration</li>
+            <li>Wireframing & Prototyping</li>
+        </ul>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">💻</div>
+        <h4>Frontend Development</h4>
+        <p>Build responsive, performant websites using modern technologies and best practices.</p>
+        <ul class="service-features">
+            <li>React/Vue.js Development</li>
+            <li>Responsive Design</li>
+            <li>Performance Optimization</li>
+            <li>Cross-Browser Compatibility</li>
+        </ul>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">🚀</div>
+        <h4>Landing Pages</h4>
+        <p>High-converting landing pages designed to capture leads and drive business growth.</p>
+        <ul class="service-features">
+            <li>Conversion-Focused Design</li>
+            <li>A/B Testing Ready</li>
+            <li>Fast Load Times</li>
+            <li>SEO Optimized</li>
+        </ul>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">🔄</div>
+        <h4>Website Redesign</h4>
+        <p>Modernize your existing website with fresh design and improved functionality.</p>
+        <ul class="service-features">
+            <li>Modern UI Refresh</li>
+            <li>Improved User Experience</li>
+            <li>Mobile Optimization</li>
+            <li>Content Migration</li>
+        </ul>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">📁</div>
+        <h4>Portfolio Websites</h4>
+        <p>Showcase your work with a professional portfolio that stands out from the crowd.</p>
+        <ul class="service-features">
+            <li>Custom Design</li>
+            <li>Project Galleries</li>
+            <li>Contact Forms</li>
+            <li>Easy Content Updates</li>
+        </ul>
+    </div>
+
+    <div class="service-card fade-in">
+        <div class="service-icon">⚡</div>
+        <h4>Website Optimization</h4>
+        <p>Boost your website's speed, performance, and search engine rankings.</p>
+        <ul class="service-features">
+            <li>Speed Optimization</li>
+            <li>SEO Enhancement</li>
+            <li>Code Refactoring</li>
+            <li>Security Improvements</li>
+        </ul>
+    </div>
+</div>
+
+<!-- WhatsApp CTA -->
+<div class="whatsapp-cta fade-in">
+    <h3>Ready to Start Your Project?</h3>
+    <p style="font-size: 1.2rem; margin-bottom: 2rem;">Let's discuss your requirements and bring your vision to life!</p>
+    <button class="btn-whatsapp" id="whatsappContact">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+        <a href="https://wa.me/233544823484" style="text-decoration: none; color: white;">Contact Me on WhatsApp</a>
+    </button>
+</div>
+
+</main>
+</body>
+
+ <!-- FOOTER (Same as all pages) -->
+    <footer class="main-footer">
+         <div class="footer-content">
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <a href="mailto:lotsuibrahim2@gmail.com" style="text-decoration: none; color: white;">📧 lotsuibrahim2@gmail.com</a>
+                <a href="tel:+233544823484" style="text-decoration: none; color: white;">📱 +233 544 823 484</a>
+                 <a href="tel:+233554196068" style="text-decoration: none; color: white;">📱 +233 554 196 068</a>
+                
+                <p>📍 Accra, Ghana</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Me</h4>
+                <div class="social-icons">
+                    <!-- Social icons SVGs here -->
+                     <a href="https://github.com/ibrahim-dev527" aria-label="GitHub" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ibrahim-lotsu-4910b5367?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" aria-label="LinkedIn" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/IbrahimLotsu" aria-label="Twitter" class="social-link">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 IBRATECH. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+     <div class="chatbot-float" id="chatbot-trigger">
+        
+        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            <circle cx="9" cy="10" r="1" fill="currentColor"/>
+            <circle cx="15" cy="10" r="1" fill="currentColor"/>
+            <path d="M9 14a3 3 0 0 0 6 0"/>
+        </svg>
+        
+    </div>
+    <p class="ibh-chatbot-assistant">Ibrahim's Chatbot Assistant</p>
+
+
+
+    <script src="js/main-script.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
