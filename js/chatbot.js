@@ -18,7 +18,8 @@ const MY_INFO = {
         email: "lotsuibrahim2@gmail.com",
         phone: ["+233 544 823 484", "+233 554 196 068"],
         languages: ["English", "Twi", "Hausa", "Dandanchi", "Arabic"],
-        timezone: "GMT (Greenwitch Meridian Time)"
+        timezone: "GMT (Greenwitch Meridian Time)",
+        food: ["Waakye with meat and the rest of the family members.", "Banku with Tilapia", "Fried Rice"]
     },
     
     education: {
@@ -99,9 +100,9 @@ const MY_INFO = {
     ],
     
     interests: {
-        tech: ["AI/ML", "Web3/Blockchain", "Cloud Computing", "DevOps"],
+        tech: ["AI/ML", "Web3/Blockchain", "Cloud Computing", "DevOps", "Video Editing"],
         hobbies: ["Open Source Contribution", "Tech Blogging", "Photography", "Hiking"],
-        learning: "Currently learning Go and Rust"
+        learning: "Currently learning Software Engineering"
     },
     
     website: {
