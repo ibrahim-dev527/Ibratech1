@@ -366,7 +366,8 @@
                 ✓ Thank you! Your message has been sent successfully. I'll get back to you within 24 hours.
             </div>
 
-            <form id="contactForm">
+            <!-- In contact.html, replace the form tag with this: -->
+<form id="contactForm" action="https://formsubmit.co/lotsuibrahim2@gmail.com" method="POST">
                 <div class="form-group">
                     <label for="name">Your Name <span>*</span></label>
                     <input 
@@ -409,6 +410,12 @@
                         required
                     ></textarea>
                 </div>
+
+               <!-- Add these inside the form, before the submit button -->
+<input type="hidden" name="_subject" value="New Contact Form Submission!">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+<input type="text" name="_honey" style="display:none">
 
                 <button type="submit" class="btn-submit">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
