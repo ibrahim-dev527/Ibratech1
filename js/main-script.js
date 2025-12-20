@@ -283,35 +283,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     // CONTACT FORM VALIDATION
     // ===================================
-    const contactForm = document.getElementById('contactForm');
+    // const contactForm = document.getElementById('contactForm');
     
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
             
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
+    //         const name = document.getElementById('name').value.trim();
+    //         const email = document.getElementById('email').value.trim();
+    //         const subject = document.getElementById('subject').value.trim();
+    //         const message = document.getElementById('message').value.trim();
             
-            // Validation
-            if (!name || !email || !subject || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
+    //         // Validation
+    //         if (!name || !email || !subject || !message) {
+    //             alert('Please fill in all fields');
+    //             return;
+    //         }
             
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address');
-                return;
-            }
+    //         // Email validation
+    //         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    //         if (!emailRegex.test(email)) {
+    //             alert('Please enter a valid email address');
+    //             return;
+    //         }
             
-            // Success (in real app, would send to backend)
-            alert(`Thank you, ${name}!\n\nYour message has been sent successfully.\n\nSubject: ${subject}\n\nI'll get back to you within 24 hours.`);
-            contactForm.reset();
-        });
-    }
+    //         // Success (in real app, would send to backend)
+    //         alert(`Thank you, ${name}!\n\nYour message has been sent successfully.\n\nSubject: ${subject}\n\nI'll get back to you within 24 hours.`);
+    //         contactForm.reset();
+    //     });
+    // }
     
     // ===================================
     // WHATSAPP CONTACT BUTTON
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (whatsappBtn) {
         whatsappBtn.addEventListener('click', function() {
             // Replace with your actual WhatsApp number
-            const phoneNumber = '1234567890'; // Format: country code + number (no spaces or +)
+            const phoneNumber = '233544823484'; // Format: country code + number (no spaces or +)
             const message = encodeURIComponent('Hi! I\'m interested in your services.');
             const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
             window.open(whatsappURL, '_blank');
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const footerYear = document.querySelector('.footer-bottom p');
     if (footerYear) {
         const currentYear = new Date().getFullYear();
-        footerYear.textContent = `© ${currentYear} Alex Thompson. All Rights Reserved.`;
+        footerYear.textContent = `© ${currentYear} IBRATECH. All Rights Reserved.`;
     }
     
     // ===================================
