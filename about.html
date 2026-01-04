@@ -55,6 +55,11 @@
             margin-top: 2rem;
         }
 
+        .btn-download a {
+            color: white;
+            text-decoration: none;
+        }
+
         .btn-download {
             padding: 1rem 2.5rem;
             background: linear-gradient(135deg, var(--accent), var(--accent-2));
@@ -229,13 +234,16 @@
                 <p>Beyond just writing code, I believe in creating solutions that solve real problems. Whether it's optimizing website performance, designing intuitive user interfaces, or architecting scalable backend systems, I approach every challenge with creativity, precision, and a commitment to excellence.</p>
 
                 <div class="cv-download">
-                    <button class="btn-download" onclick="alert('CV Download functionality - Connect to your actual CV file!')">
+                    <button class="btn-download">
+                    <a href="CV/Ibrahim-Mohammed-CV.pdf" download="Ibrahim-Mohammed-Lotsu-CV.pdf" class="btn-downloadd">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="7 10 12 15 17 10"></polyline>
                             <line x1="12" y1="15" x2="12" y2="3"></line>
                         </svg>
                         Download My CV
+                        </a>
+                        
                     </button>
                 </div>
             </div>

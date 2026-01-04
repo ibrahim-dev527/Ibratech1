@@ -281,37 +281,104 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===================================
-    // CONTACT FORM VALIDATION
+    // CONTACT FORM VALIDATION - FORMSPREE
     // ===================================
-    // const contactForm = document.getElementById('contactForm');
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
     
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', function(e) {
-    //         e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
             
-    //         const name = document.getElementById('name').value.trim();
-    //         const email = document.getElementById('email').value.trim();
-    //         const subject = document.getElementById('subject').value.trim();
-    //         const message = document.getElementById('message').value.trim();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
             
-    //         // Validation
-    //         if (!name || !email || !subject || !message) {
-    //             alert('Please fill in all fields');
-    //             return;
-    //         }
+            // Validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields');
+                return;
+            }
             
-    //         // Email validation
-    //         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //         if (!emailRegex.test(email)) {
-    //             alert('Please enter a valid email address');
-    //             return;
-    //         }
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address');
+                return;
+            }
             
-    //         // Success (in real app, would send to backend)
-    //         alert(`Thank you, ${name}!\n\nYour message has been sent successfully.\n\nSubject: ${subject}\n\nI'll get back to you within 24 hours.`);
-    //         contactForm.reset();
-    //     });
-    // }
+            // Get form data
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+            
+            // Disable button and show loading state
+            submitButton.disabled = true;
+            submitButton.innerHTML = `
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation: spin 1s linear infinite;">
+                    <circle cx="12" cy="12" r="10" opacity="0.25"></circle>
+                    <path d="M12 2a10 10 0 0 1 10 10" opacity="0.75"></path>
+                </svg>
+                Sending...
+            `;
+            
+            try {
+                // Submit to Formspree
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Success! Show message
+                    if (successMessage) {
+                        successMessage.classList.add('show');
+                        successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 5000);
+                    } else {
+                        alert(`Thank you, ${name}!\n\nYour message has been sent successfully.\n\nSubject: ${subject}\n\nI'll get back to you within 24 hours.`);
+                    }
+                    
+                    contactForm.reset();
+                    
+                } else {
+                    // Handle error response
+                    const data = await response.json();
+                    if (data.errors) {
+                        alert('Oops! There were some errors:\n' + data.errors.map(error => error.message).join('\n'));
+                    } else {
+                        alert('Oops! There was a problem submitting your form. Please try again.');
+                    }
+                }
+            } catch (error) {
+                // Network error
+                alert('Oops! There was a problem submitting your form. Please check your internet connection and try again.');
+                console.error('Form submission error:', error);
+            } finally {
+                // Re-enable button
+                submitButton.disabled = false;
+                submitButton.innerHTML = originalButtonText;
+            }
+        });
+    }
+    
+    // Add spin animation for loading spinner
+    const spinStyle = document.createElement('style');
+    spinStyle.textContent = `
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    `;
+    document.head.appendChild(spinStyle);
     
     // ===================================
     // WHATSAPP CONTACT BUTTON
